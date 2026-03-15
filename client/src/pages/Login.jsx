@@ -83,6 +83,7 @@ const Login = () => {
             className="border-none outline-none ring-0 w-full"
             value={formData.password}
             onChange={handleChange}
+            autoComplete="current-password"
             required
           />
         </div>

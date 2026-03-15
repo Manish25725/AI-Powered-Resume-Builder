@@ -12,7 +12,7 @@ export const enhanceProfessionalSummary = async (req, res) => {
     }
 
     const response = await ai.chat.completions.create({
-      model: process.env.OPENAI_MODEL,
+      model: process.env.GROQ_API_MODEL || "llama3-8b-8192",
       messages: [
         {
           role: "system",
@@ -44,7 +44,7 @@ export const enhanceJobDescription = async (req, res) => {
     }
 
     const response = await ai.chat.completions.create({
-      model: process.env.OPENAI_MODEL,
+      model: process.env.GROQ_API_MODEL || "llama3-8b-8192",
       messages: [
         {
           role: "system",
@@ -124,7 +124,7 @@ export const uploadResume = async (req, res) => {
     `;
 
     const response = await ai.chat.completions.create({
-      model: process.env.OPENAI_MODEL,
+      model: process.env.GROQ_API_MODEL || "llama3-8b-8192",
       messages: [
         {
           role: "system",
