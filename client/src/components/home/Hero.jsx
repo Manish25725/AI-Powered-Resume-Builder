@@ -8,11 +8,11 @@ const Hero = () => {
   const { user } = useSelector((state) => state.auth);
 
   const logos = [
-    "https://saasly.prebuiltui.com/assets/companies-logo/instagram.svg",
-    "https://saasly.prebuiltui.com/assets/companies-logo/framer.svg",
-    "https://saasly.prebuiltui.com/assets/companies-logo/microsoft.svg",
-    "https://saasly.prebuiltui.com/assets/companies-logo/huawei.svg",
-    "https://saasly.prebuiltui.com/assets/companies-logo/walmart.svg",
+    "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg",
+    "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg",
+    "https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg",
+    "https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg",
+    "https://upload.wikimedia.org/wikipedia/commons/0/08/Cisco_logo_blue_2016.svg",
   ];
 
   return (
@@ -240,7 +240,7 @@ const Hero = () => {
                 key={index}
                 src={logo}
                 alt="logo"
-                className="h-6 w-auto max-w-xs"
+                className="h-6 w-auto max-w-xs opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300 object-contain"
               />
             ))}
           </div>
