@@ -93,6 +93,12 @@ export const updateResume = async (req, res) => {
     }
 
     if (image) {
+      if (!imageKit) {
+        return res
+          .status(500)
+          .json({ message: "ImageKit configuration is missing on the server" });
+      }
+
       const imageBufferData = fs.createReadStream(image.path);
 
       const response = await imageKit.files.upload({
