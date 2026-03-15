@@ -12,7 +12,7 @@ export const enhanceProfessionalSummary = async (req, res) => {
     }
 
     const response = await ai.chat.completions.create({
-      model: process.env.GROQ_API_MODEL || "llama3-8b-8192",
+      model: process.env.GROQ_API_MODEL || "llama-3.1-8b-instant",
       messages: [
         {
           role: "system",
@@ -44,7 +44,7 @@ export const enhanceJobDescription = async (req, res) => {
     }
 
     const response = await ai.chat.completions.create({
-      model: process.env.GROQ_API_MODEL || "llama3-8b-8192",
+      model: process.env.GROQ_API_MODEL || "llama-3.1-8b-instant",
       messages: [
         {
           role: "system",
@@ -77,54 +77,64 @@ export const uploadResume = async (req, res) => {
     }
 
     const systemPrompt =
-      "You are an expert AI agent to extract date from resume.";
+      "You are an expert AI agent to extract data from a resume.";
 
     const userPrompt = `extract data from this resume ${resumeText} Provide data in the following JSON format with no additional text before or after: 
       {
-        professional_summary: { type: String, default: "" },
-        skills: [{ type: String }],
-        personal_info: {
-          image: { type: String, default: "" },
-          full_name: { type: String, default: "" },
-          profession: { type: String, default: "" },
-          email: { type: String, default: "" },
-          phone: { type: String, default: "" },
-          location: { type: String, default: "" },
-          linkedin: { type: String, default: "" },
-          github: { type: String, default: "" },
-          website: { type: String, default: "" },
+        "professional_summary": "",
+        "skills": [""],
+        "personal_info": {
+          "image": "",
+          "full_name": "",
+          "profession": "",
+          "email": "",
+          "phone": "",
+          "location": "",
+          "linkedin": "",
+          "github": "",
+          "website": ""
         },
-        experience: [
+        "experience": [
           {
-            company: { type: String },
-            position: { type: String },
-            start_date: { type: String },
-            end_date: { type: String },
-            description: { type: String },
-            is_current: { type: Boolean },
-          },
+            "company": "",
+            "position": "",
+            "start_date": "",
+            "end_date": "",
+            "description": "",
+            "is_current": false
+          }
         ],
-        project: [
+        "project": [
           {
-            name: { type: String },
-            type: { type: String },
-            description: { type: String },
-          },
+            "name": "",
+            "type": "",
+            "description": "",
+            "link": ""
+          }
         ],
-        experience: [
+        "education": [
           {
-            insitution: { type: String },
-            degree: { type: String },
-            field: { type: String },
-            graduation_date: { type: String },
-            gpa: { type: String },
-          },
+            "institution": "",
+            "degree": "",
+            "field": "",
+            "graduation_date": "",
+            "gpa": ""
+          }
         ],
+        "certification": [
+          {
+            "certificate_name": "",
+            "description": "",
+            "issuer": "",
+            "issue_date": "",
+            "credential_url": ""
+          }
+        ]
       }
     `;
 
     const response = await ai.chat.completions.create({
-      model: process.env.GROQ_API_MODEL || "llama3-8b-8192",
+      model: process.env.GROQ_API_MODEL || "llama-3.1-8b-instant",
       messages: [
         {
           role: "system",

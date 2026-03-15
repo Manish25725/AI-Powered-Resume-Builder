@@ -52,7 +52,7 @@ const ResumeSchema = new mongoose.Schema(
         certificate_name: { type: String },
         description: { type: String },
         issuer: { type: String },
-        issue_date: { type: Date },
+        issue_date: { type: String },
         credential_url: { type: String },
       },
     ],
