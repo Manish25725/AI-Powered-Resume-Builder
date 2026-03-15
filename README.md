@@ -4,12 +4,12 @@
 Create, customise and download professional-looking CVs in just a few minutes.
 
 ## 🚀 Live Demo  
-[Visit the app](https://ai-resume-builder-iota-one.vercel.app)
+[Visit the app](https://ai-powered-resume-builder-ibhl.onrender.com)
 
 ## 🧰 Tech Stack  
 - **Frontend:** React, Vite, TailwindCSS  
 - **Backend:** Node.js, Express  
-- **Deployment:** Vercel  
+- **Deployment:** Render  
 - **Features:**  
   - Rich form for personal info, experience, projects, education  
   - Multiple templates for different styles  
